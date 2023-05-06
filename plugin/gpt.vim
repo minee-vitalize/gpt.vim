@@ -1,9 +1,9 @@
-command! Gpt call gpt#Gpt()
+command! Gpt call gpt#Gpt(<f-args>)
 
-function! gpt#Gpt() abort
+function! gpt#Gpt(contents) abort
   " ここに処理を書いていく
   if executable('curl')
-    let cmd = "curl https://api.openai.com/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer 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\" -d '{\"model\": \"gpt-3.5-turbo\", \"messages\": [{\"role\": \"user\", \"content\": \"自己紹介をして下さい\"}]}'"
+    let cmd = "curl https://api.openai.com/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer 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\" -d '{\"model\": \"gpt-3.5-turbo\", \"messages\": [{\"role\": \"user\", \"content\": \"".a:contents."\"}]}'"
 
     "  let result = json_decode(system(cmd))
     let result = system(cmd)
