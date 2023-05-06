@@ -5,7 +5,7 @@ function! gpt#Gpt(contents) abort
   if executable('curl')
     echo a:contents
 
-    let cmd = "curl https://api.openai.com/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer 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\" -d '{\"model\": \"gpt-3.5-turbo\", \"messages\": [{\"role\": \"user\", \"content\": \"".a:contents."\"}]}'"
+    let cmd = "curl https://api.openai.com/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer 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\" -d '{\"model\": \"gpt-3.5-turbo\", \"messages\": [{\"role\": \"user\", \"content\": ".a:contents."}]}'"
     echo cmd
     "  let result = json_decode(system(cmd))
     let result = system(cmd)
