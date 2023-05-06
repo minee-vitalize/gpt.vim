@@ -7,15 +7,7 @@ function! gpt#Gpt(contents) abort
     echo cmd
     "  let result = json_decode(system(cmd))
     let result = system(cmd)
-    let decode = json_decode(result)
     echo result
-    echo decode['id']
-    "  if result['cod'] == 200
-      "  echo result['weather']
-      "  echo result['main']
-    "  else
-      "  echoerr result
-    "  endif
   else
     echoerr 'error! curl not available.'
   endif
