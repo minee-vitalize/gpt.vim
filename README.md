@@ -1,4 +1,3 @@
 # gpt.vim
-hit chatGPT api from vim
 
-test
+hit chatGPT api from vim
