@@ -5,7 +5,8 @@ function! gpt#Gpt() abort
   if executable('curl')
     let cmd = "curl https://api.openai.com/v1/chat/completions -H \"Content-Type: application/json\" -H \"Authorization: Bearer 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\" -d '{\"model\": \"gpt-3.5-turbo\", \"messages\": [{\"role\": \"user\", \"content\": \"自己紹介をして下さい\"}]}'"
 
-    let result = json_decode(system(cmd))
+    "  let result = json_decode(system(cmd))
+    let result = system(cmd)
 
     echo result
     "  if result['cod'] == 200
